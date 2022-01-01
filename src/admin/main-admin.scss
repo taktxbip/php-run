@@ -1,0 +1,179 @@
+.php-run-once {
+    &-actions {
+        margin-top: 30px;
+        display: flex;
+        [data-action=save] {
+            margin-left: 10px;
+        }
+        [data-action=load] {
+            margin-left: auto;
+        }
+        label {
+            margin-right: 10px;
+        }
+        select {
+            min-width: 120px;
+        }
+    }
+    &-editor {
+        position: relative;
+        background-color: #856868;
+        code {
+            z-index: 0;
+            pointer-events: none;
+        }
+    }
+    &-log {
+        width: 100%;
+        position: relative;
+        @media all and (max-width: 900px) {
+            margin: 10px 0 0;
+        }
+        code {
+            height: 100%;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    }
+    &-page {
+        color: #1d2327;
+    }
+    &-log pre,
+    &-editor {
+        &-wrapper {
+            display: flex;
+            padding-top: 26px;
+            margin: 0 -1px;
+            @media all and (max-width: 900px) {
+                flex-direction: column;
+            }
+            >* {
+                margin: 0 1px;
+                min-height: 70vh;
+                width: 100%;
+                @media all and (max-width: 900px) {
+                    min-height: 50vh;
+                    margin-top: 40px;
+                    width: unset;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        pre {
+            margin: 0;
+        }
+    }
+    &-description {
+        position: absolute;
+        margin-top: -26px;
+    }
+}
+
+[data-php-code] {
+    resize: none;
+    z-index: 1;
+    color: transparent;
+    background: transparent;
+    caret-color: white;
+    &:focus,
+    &:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+[data-php-code],
+.php-run-once-page code {
+    padding: 10px 15px !important;
+    box-sizing: border-box;
+    position: absolute;
+    box-shadow: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    border: none;
+    font-size: 14px;
+    font-family: monospace;
+    line-height: 1.5;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.php-run {
+    &-settings {
+        padding-top: 20px;
+        display: flex;
+        justify-content: flex-start;
+        @media all and (max-width: 1000px) {
+            flex-direction: column;
+        }
+        form {
+            width: 100%;
+            max-width: 600px;
+            input {
+                min-width: 200px;
+            }
+        }
+    }
+    &-about {
+        max-width: 500px;
+        padding-top: 20px;
+    }
+    &-box {
+        padding: 30px;
+        box-sizing: border-box;
+        background-color: #fff;
+        margin-bottom: 20px;
+        h2 {
+            margin: 0;
+        }
+    }
+    &-scripts {
+        margin-left: 30px;
+        width: 100%;
+        max-width: 500px;
+        @media all and (max-width: 1000px) {
+            margin-top: 50px;
+            margin-left: 0;
+        }
+        ul {
+            margin: 0;
+            li {
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                padding: 10px 0;
+                border-bottom: 1px solid #f0f0f0;
+                &:first-child {
+                    padding-top: 0;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+        .remove {
+            margin-left: 20px;
+            color: #2271b1;
+            text-decoration: underline;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        ul li {
+            display: flex;
+        }
+        h3 {
+            margin: 0;
+        }
+    }
+}
